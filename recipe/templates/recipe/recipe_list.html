@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Recipes</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-bell fa-fw"></i> Recipes
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="list-group">
+
+                            {% for object in object_list %}
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-comment fa-fw"></i>{{ object }}
+                                        <span class="pull-right text-muted small"><em>{{  object }}</em>
+                                        </span>
+                                </a>
+                            {% empty %}
+                                <a href="#" class="list-group-item">
+                                    <i class="fa fa-comment fa-fw"></i>No recipes yet
+                                </a>
+
+                            {% endfor %}
+
+                        </div>
+
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
